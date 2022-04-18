@@ -1,8 +1,12 @@
 # `MA-TT`
 
-[demo-link](https://vadym-mishchenko.github.io/ma-tt/)
+- [demo-link](https://vadym-mishchenko.github.io/ma-tt/)
+- [task](https://gist.github.com/dankor/3be0deaa1e4d7389b1054d5a291c730c)
 
-Possible types:
+## `How does it work`:
+This app will convert the json file to another json file where the types are defined. Click "Demo" to open the application page. There is an example on the page, but you can upload your own file by clicking on the "upload file" button and see in the "output" box what the new json file looks like.
+
+## `Possible types`:
 - integer
 - boolean
 - array
@@ -21,56 +25,10 @@ Possible types:
 - short text
 - word
 
-## `Task:`
-
-You have to create a web app to convert one json to another json file. Feel free to create your own sophisticated UI. 
-
-Input JSON structure example:
-```
-{
-    "a": "1",
-    "b": true,
-    "c": [1,2,3],
-    "d": "https://gist.github.com/"
-}
-```
-The output should be the guess of types per every field and return a corresponding json:
-```
-{
-    "a": "integer",
-    "b": "boolean",
-    "c": "array",
-    "d": "url"
-}
-```
-Possible types which you have to guess:
-
-- array (list)
-- object (dictionary)
-- boolean (binary)
-- integer (integer number)
-- double (floating-point digit)
-- zip (postal code)
-- uuid (universal unique identifier)
-- phone (phone number)
-- date (date or datetime)
-- ip (internet protocol address)
-- url (uniform resource locator address)
-- email (email address)
-- address (street address)
-- text (long text)
-- title (short text)
-- word (a word)
-- undefined (everything else)
-
-Acceptance criteria:
-
-- Web page should be browser-only, OS-agnostic, no additional software required
-- Only client-side, no server dependency
-- Code should be clean and extendable for more types
-- UI should be simple and work properly
-- The output order should be the same as an input value
-- Try to guess as accurately as possible (I'll run my own json files to check the accuracy)
-- There is no strong requirements about types, decide yourself which to pick if any ambiguity
-- The code should be hosted on Github
-- README.MD should include clear instruction on how to run it and how it works
+## `Technologies used in project`:
+- React
+- JavaScript
+- HTML5
+- SCSS
+- BEM-methodology
+- JSON
