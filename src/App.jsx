@@ -29,6 +29,7 @@ function App() {
       <h1 className="app__main-title">Web app to convert one json to another json file</h1>
       <div className="app__container">
         <div className="app__output">
+          <h2>Input JSON</h2>
           <div className="app__title-container">
             <p className="app__title">key</p>
             <p className="app__title-value">value</p>
@@ -43,6 +44,7 @@ function App() {
           })}
         </div>
         <div className="app__output">
+          <h2>Output JSON</h2>
           <div className="app__title-container">
             <p className="app__title">key</p>
             <p className="app__title-value">converted value</p>

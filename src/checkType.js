@@ -102,7 +102,7 @@ export const checkType = (value) => {
   } else if (isPostalCode(value)) {
     return 'postal code'
   } else if (isInteger(value)) {
-    return 'integer number'
+    return 'integer'
   } else if (isUUID(value)) {
     return 'universal unique identifier';
   } else if (isTel(value)) {

@@ -1,6 +1,27 @@
-## MA-TT
+# `MA-TT`
 
-[demo](https://vadym-mishchenko.github.io/ma-tt/)
+[demo-link](https://vadym-mishchenko.github.io/ma-tt/)
+
+Possible types:
+- integer
+- boolean
+- array
+- url
+- object
+- double
+- zip (for Odessa, example: 65000)
+- uuid
+- phone
+- date (can be: 11.11.2022 or 11/11/2022 or 11-11-2022)
+- internet protocol
+- url
+- email
+- address
+- long text
+- short text
+- word
+
+## `Task:`
 
 You have to create a web app to convert one json to another json file. Feel free to create your own sophisticated UI. 
 
