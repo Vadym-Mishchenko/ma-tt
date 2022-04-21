@@ -7,7 +7,6 @@ p {
   padding: 48px 48px;
 
   &__download-file {
-    margin-bottom: 36px;
     border: 2px solid #6c5ce7;
     padding: .2em .4em;
     border-radius: .2em;
@@ -30,7 +29,7 @@ p {
   &__output {
     padding: 24px;
     min-height: 50vh;
-    width: 600px;
+    width: 450px;
     border: 1px solid #fff;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
@@ -50,6 +49,10 @@ p {
   &__title-value {
     width: 400px;
     font-weight: 500;
+  }
+  
+  &__subtitle {
+    width: 500px;
   }
 
   &__list-container {
@@ -76,5 +79,18 @@ p {
     width: 400px;
     color: #c53c3c;
     border-left: 1px solid #d3cfcf;
+  }
+
+  &__area{
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 500px;
+    min-height: 700px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
   }
 }

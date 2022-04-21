@@ -16,10 +16,9 @@ const isURL = (value) => {
   return urlInput.checkValidity();
 };
 
-const isTel = (value) => value.split('').every(char => '+ 0123456789'.includes(char));
+const isTel = (value) => /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(value);
 
-const isPostalCode = (value) => value.substr(0, 2) === '65'
-  && value.length === 5 && value.split('').every(char => '0123456789'.includes(char));
+const isPostalCode = (value) => /^\d{5}(?:[-\s]\d{4})?$/.test(value);
 
 const isInteger = (value) => value.split('').every(char => '0123456789'.includes(char));
 

@@ -13,7 +13,7 @@ This app will convert the json file to another json file where the types are def
 - url
 - object
 - double
-- zip (for Odessa, example: 65000)
+- zip
 - uuid
 - phone
 - date (can be: 11.11.2022 or 11/11/2022 or 11-11-2022)
@@ -26,7 +26,7 @@ This app will convert the json file to another json file where the types are def
 - word
 
 ## `Technologies used in project`:
-- React
+- React, Hooks
 - JavaScript
 - HTML5
 - SCSS
