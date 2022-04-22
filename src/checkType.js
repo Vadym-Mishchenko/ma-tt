@@ -20,20 +20,17 @@ const isTel = (value) => /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.
 
 const isPostalCode = (value) => /^\d{5}(?:[-\s]\d{4})?$/.test(value);
 
-const isInteger = (value) => value.split('').every(char => '0123456789'.includes(char));
+const isInteger = (value) => typeof value === 'number' && Number.isInteger(value) ? true : false;
 
-const isUUID = (value) => {
-  if (value.split('').every(char => '0123456789abcdefghijklmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ'.includes(char))) {
-    const partOfisUUID = value.split('-');
-    if (partOfisUUID[0].length === 8 && partOfisUUID[1].length === 4
-      && partOfisUUID[2].length === 4 && partOfisUUID[3].length === 4
-      && partOfisUUID[4].length === 12 && value.length === 36) {
-      return true;
-    }
-  }
-}
+const isFloat = (value) => typeof value === 'number' && !Number.isInteger(value) ? true : false;
+
+const isUUID = (value) => /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(value);
 
 const isDate = (value) => {
+  if (typeof value !== 'string') {
+    return false;
+  }
+
   if ((value.split('.').length - 1 === 2
     || value.split('/').length - 1 === 2
     || value.split('-').length - 1 === 2)
@@ -58,6 +55,10 @@ const isDate = (value) => {
 };
 
 const isIP = (value) => {
+  if (typeof value !== 'string') {
+    return false;
+  }
+
   if (value.split('.').length - 1 === 3
     && value.split('').every(char => '0123456789.'.includes(char))) {
     const partOfIP = value.split('.');
@@ -70,12 +71,6 @@ const isIP = (value) => {
       return false;
     }
   }
-};
-
-const isFloat = (value) => {
-  const partOfValue = value.split('.');
-  return partOfValue.length - 1 === 1 && partOfValue[0] !== '' && partOfValue[1] !== ''
-    && value.split('').every(char => '.0123456789'.includes(char))
 };
 
 const isAddress = (value) => value.includes('street' || 'square' || 'avenue');
@@ -94,35 +89,65 @@ const isWord = (value) => value.split('')
 export const checkType = (value) => {
   if (Array.isArray(value)) {
     return 'array';
-  } else if (isObject(value)) {
+  }
+
+  if (isObject(value)) {
     return 'object';
-  } else if (isBoolean(value)) {
+  }
+
+  if (isBoolean(value)) {
     return 'boolean';
-  } else if (isPostalCode(value)) {
+  } 
+  
+  if (isPostalCode(value)) {
     return 'postal code'
-  } else if (isInteger(value)) {
+  }
+  
+  if (isInteger(value)) {
     return 'integer'
-  } else if (isUUID(value)) {
+  }
+  
+  if (isUUID(value)) {
     return 'universal unique identifier';
-  } else if (isTel(value)) {
+  }
+  
+  if (isTel(value)) {
     return 'phone number';
-  } else if (isDate(value)) {
+  }
+  
+  if (isDate(value)) {
     return 'date or datetime';
-  } else if (isIP(value)) {
+  }
+  
+  if (isIP(value)) {
     return 'internet protocol address';
-  } else if (isFloat(value)) {
+  }
+  
+  if (isFloat(value)) {
     return 'floating - point digit';
-  } else if (isURL(value)) {
+  }
+  
+  if (isURL(value)) {
     return 'url';
-  } else if (isEmail(value)) {
+  }
+  
+  if (isEmail(value)) {
     return 'email';
-  } else if (isAddress(value)) {
+  }
+  
+  if (isAddress(value)) {
     return 'street address';
-  } else if (isLongText(value)) {
+  }
+  
+  if (isLongText(value)) {
     return 'long text';
-  } else if (isShortText(value)) {
+  }
+  
+  if (isShortText(value)) {
     return 'short text';
-  } else if (isWord) {
+  }
+  
+  if (isWord) {
     return 'word';
   } else {
     return 'undefined';
